@@ -1,0 +1,360 @@
+:root{
+    --color-main: #232338;
+    --color-sec: #18182c;
+}
+
+@font-face {
+    font-family: 'Airbnb Cereal App';
+    src: url(../AirbnbCerealMedium.ttf);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Airbnb Cereal App';
+}
+
+.page__container{
+    width: 100vw;
+    height: 100vh;
+    background: var(--color-main);
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    grid-template-rows: 1fr;
+    overflow: hidden;
+}
+
+.form__container{
+    grid-column: 1 / 2;
+    background: var(--color-sec);
+    box-shadow: 1px 1px 11px;
+}
+
+.info{
+    position: relative;
+    grid-column: 2 / 3;
+}
+
+#form{
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    color: white;
+}
+
+.title{
+    font-size: 2rem;
+    margin-top: 40px;
+}
+
+.lbl{
+    display: block;
+    margin: 40px 0 10px 0;
+    font-size: 0.9rem;
+}
+
+.input, .select{
+    background: none;
+    border: none;
+    padding: 5px 5px;
+    border-bottom: 1px solid #232338;
+    color: white;
+}
+
+
+option{
+    background: var(--color-sec);
+}
+
+#submit{
+    background: none;
+    border: 1px solid #bbbaba;
+    border-radius: 5px;
+    color: #ffff;
+    display: block;
+    font-size: 1rem;
+    width: 100%;
+    margin-top: 50px;
+    padding: 5px 0;
+    cursor: pointer;
+    transition: background .2s;
+}
+
+#submit:hover{
+    background: #e6e6e63a;
+}
+
+.info__container{
+    width: 80%;
+    height: 100%;
+    margin: auto;
+}
+
+
+/* --------------- Main info ------------------- */
+.main__info{
+    margin-top: 30px;
+    height: 30%;
+    position: relative;
+    animation: move 1s .5s forwards;
+}
+
+.current-temp__container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 3rem;
+    display: flex;
+}
+
+.current-temp__container img{
+    width: 70px;
+    height: 70px
+}
+
+.city-name__container{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.5rem;
+}
+
+.hours__container{
+    position: absolute;
+    left: 0;
+    top: 50%;
+}
+
+.hours__container .text{
+    color: #bbbaba;
+}
+
+.current-temp__container p{
+    margin-left: 10px;
+}
+
+.text{
+    color: #ffff;
+}
+
+.country{
+    text-align: right;
+    font-size: 1.25rem;
+    color: #bbbaba;
+}
+
+.cards__container{
+    height: 55%;
+    margin: 30px auto 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+    gap: 15px;
+}
+
+/* -------- Mensaje de error ------------- */
+
+.msj-error{
+    background-color: #18182c;
+    padding: 20px 30px;
+    border-radius: 10px;
+    color: #ffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.25rem;
+}
+
+/* -------- Cards universal ------------- */
+
+.card{
+    opacity: 0;
+    position: relative;
+    background: var(--color-sec);
+    border-radius: 8px;
+    box-shadow: 0px 0px 6px;
+    transition: transform .2s;
+}
+
+#max-min, #humidity{
+    animation: move .4s forwards;
+}
+#wind, #visibility{
+    animation: move .6s forwards;
+}
+#sunrise-sunset, #cloudiness{
+    animation: move .8s forwards;
+}
+
+.card:hover{
+    transform: scale(1.02);
+}
+
+.card__title{
+    margin: 10px 15px;
+    color: #bbbaba;
+}
+
+.card__text{
+    font-size: 2rem;
+    position: absolute;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+.card__footer{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    font-size: 0.9rem;
+    bottom: 10%;
+    margin-left: 10px;
+}
+
+.card-footer__text{
+    margin-left: 10px;
+}
+
+.figure{
+    position: absolute;
+    top: 10%;
+    margin-left: 3px;
+    font-size: 1rem;
+}
+
+#km{
+    position: absolute;
+    bottom: 11%;
+    margin-left: 3px;
+    font-size: 1rem;
+}
+
+/* ----------- Card temperaturas ------------- */
+
+.card-father__container{
+    margin: auto 10px;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.card-info__container{
+    display: flex;
+    align-items: center;
+}
+
+.card-info__img{
+    fill: #bbbaba;
+    width: 30px;
+}
+
+.card-info__text{
+    margin-left: 10px;
+}
+
+
+
+/* ---------- Animacion ------------- */
+@keyframes move{
+    0%{
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============= Media Querys ============== */
+
+@media screen and (max-width: 768px ) {
+    html { 
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 425px ) {
+    html { 
+        font-size: 12px;
+    }
+    .page__container {
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+    }
+    .form__container{ 
+        padding: 10px 10px 20px 10px;
+    }
+    .title{
+        margin-top: 10px;
+    }
+    .lbl{
+        margin-top: 15px;
+    }
+    .filter__container{
+        display: inline-block;
+    }
+    .filter__container:nth-of-type(2) {
+        margin-left: 20px;
+    }
+    #submit{
+        margin-top: 20px;
+    }
+/* ----------Main info---------- */
+    .main__info{
+        height: 12%;
+    }
+    .current-temp__container{
+        align-items: center;
+    }
+    .city-name__container{
+        top: 15%;
+    }
+    .hours__container{
+        left: 2%;
+        top: 100%;
+    }
+
+    .info{
+        height: 100%;
+    }
+
+/* ---------- Cards ---------- */
+
+    .cards__container{
+        height: 100%;
+        width: 100%;
+        grid-template-columns: 45% 45%;
+        grid-template-rows: repeat(3, minmax(150px, max-content));
+    }
+
+    #max-min, #wind {
+        animation: move .4s forwards;
+    }
+    #sunrise-sunset, #humidity {
+        animation: move .6s forwards;
+    }
+    #visibility, #cloudiness {
+        animation: move .8s forwards;
+    }
+
+/* ---------- Msj error ---------- */
+
+    .msj-error{
+        width: 70%;
+    }
+    
+}
+
+@media screen and (max-width: 375px ) {
+    html{
+        font-size: 10px;
+    }
+    .filter__container:nth-of-type(2){ 
+        margin-left: 0;
+    }
+}

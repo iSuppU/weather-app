@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/estilo.css".css">
+    <!-- Spinner CSS -->
+    <link rel="stylesheet" href="css/spinner.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OGG | Buscar Clima</title>
+</head>
+
+<body>
+
+    <div class="page__container">
+        <section class="form__container">
+            <form id="form">
+                <h2 class="title">Búsqueda</h2>
+                <div class="filter__container">
+                    <label class="lbl" for="pais">Pais</label>
+                    <select class="select" id="pais">
+                        <option value="">Seleccionar</option>
+                        <option value="MX">Mexico</option>
+                        <option value="US">Estados Unidos</option>
+                        <option value="CA">Canada</option>
+                        <option value="ES">España</option>
+                        <option value="PT">Portugal</option>
+                        <option value="CL">Chile</option>
+                        <option value="CO">Colombia</option>
+                        <option value="AR">Argentina</option>
+                    </select>
+                </div>
+
+                <div class="filter__container">
+                    <label class="lbl" for="ciudad">Ciudad</label>
+                    <input class="input" id="ciudad" type="text" placeholder="Ciudad">
+                </div>
+                
+
+                <input id="submit" type="submit" value="Buscar clima">
+            </form>
+        </section>
+        <section class="info">
+            <div class="info__container">
+                <div class="main__info">
+                    
+                </div>
+                <div class="cards__container">
+                    <div class="card" id="max-min"></div>
+                    <div class="card" id="wind"></div>
+                    <div class="card" id="sunrise-sunset"></div>
+                    <div class="card" id="humidity"></div>
+                    <div class="card" id="visibility"></div>
+                    <div class="card" id="cloudiness"></div>
+                </div>
+            </div>
+
+            <div class="potential-errors">
+
+            </div>
+
+            <div class="spinner__container">
+                <div class="sk-circle">
+                    <div class="sk-circle1 sk-child"></div>
+                    <div class="sk-circle2 sk-child"></div>
+                    <div class="sk-circle3 sk-child"></div>
+                    <div class="sk-circle4 sk-child"></div>
+                    <div class="sk-circle5 sk-child"></div>
+                    <div class="sk-circle6 sk-child"></div>
+                    <div class="sk-circle7 sk-child"></div>
+                    <div class="sk-circle8 sk-child"></div>
+                    <div class="sk-circle9 sk-child"></div>
+                    <div class="sk-circle10 sk-child"></div>
+                    <div class="sk-circle11 sk-child"></div>
+                    <div class="sk-circle12 sk-child"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+	<script src="js/app.js"></script>
+</body>
+
+</html>
